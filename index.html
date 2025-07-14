@@ -2893,6 +2893,112 @@ Create your own quiz now:`;
         elements.resultsReview.innerHTML=originalQuizData.map((q,i)=>{const answer=userAnswers[i];const optionsHtml=q.options.map((opt,oi)=>{let classes='result-option';if(answer.status==='answered'&&oi===answer.selected)classes+=' user-selected';if(oi===q.correctAnswerIndex)classes+=' correct-answer';return`<li class="${classes}">${opt}</li>`}).join('');return`<div class="result-item"><p class="result-question"><strong>Q${i + 1}:</strong> ${q.question.replace(/<[^>]*>/g, '')}<span class="bookmark-indicator ${bookmarkedQuestions.has(i)?'visible':''}">⭐</span></p><ul class="result-options-list">${optionsHtml}</ul><div class="result-explanation"><h5>Explanation</h5><p>${q.explanation.replace(/<[^>]*>/g, '')}</p></div></div>`}).join('')}
 });
 </script>
+  <!-- Help Me Button -->
+<button onclick="openHelpModal()" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+">
+  Help Me
+</button>
+
+<!-- Help Modal -->
+<div id="helpModal" style="
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+">
+  <div style="
+    background-color: #1c1c1e;
+    color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    max-height: 85%;
+    overflow-y: auto;
+  ">
+    <span onclick="closeHelpModal()" style="
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    ">&times;</span>
+
+    <h2 style="color: #00BFFF;">Guide: Create Quiz from Topic</h2>
+
+    <h3>Step 1: Enter Your Topic</h3>
+    <p>First, fill in the "Quiz Topic" field. For example: "World War II" or "Solar System".<br>
+    <i>(चरण 1: अपना विषय दर्ज करें - सबसे पहले, "Quiz Topic" फील्ड भरें। उदाहरण के लिए: "द्वितीय विश्व युद्ध" या "सौर मंडल")</i></p>
+
+    <h3>Step 2: Fill Quiz Details</h3>
+    <p>Fill in the details like Number of Questions, Subject, Language, Difficulty, Exam, and Question Format.<br>
+    <i>(चरण 2: क्विज़ का विवरण भरें - प्रश्नों की संख्या, विषय, भाषा, कठिनाई, परीक्षा और प्रश्न प्रारूप जैसे विवरण भरें)</i></p>
+
+    <h3>Step 3: Generate Prompt & Open AI</h3>
+    <p>Click the big "Generate Prompt & Open AI" button. This automatically copies the instructions for the AI and opens the Gemini website in a new tab.<br>
+    <i>(चरण 3: 'Generate Prompt & Open AI' बटन पर क्लिक करें - यह AI के लिए निर्देश अपने आप कॉपी कर लेगा और एक नए टैब में Gemini वेबसाइट खोल देगा)</i></p>
+
+    <h3>Step 4: Use the AI (Gemini)</h3>
+    <p>In the Gemini website, just paste the prompt into the message box and send it. Wait for the AI to generate all the questions.<br>
+    <i>(चरण 4: AI (Gemini) का उपयोग करें - Gemini वेबसाइट में, बस प्रॉम्प्ट को मैसेज बॉक्स में पेस्ट करें और भेजें। AI द्वारा सभी प्रश्न बनाने तक प्रतीक्षा करें)</i></p>
+
+    <h3>Step 5: Copy AI's Response</h3>
+    <p>After the questions are generated, copy the entire response. There are two ways to copy from Gemini: 
+    <br>1) Click the copy icon (like a clipboard 📋) below the answer.
+    <br>2) Click the three dots (...) at the top-right of the response and select 'Copy'.<br>
+    <i>(चरण 5: AI की प्रतिक्रिया कॉपी करें - प्रश्न बन जाने के बाद, पूरी प्रतिक्रिया कॉपी करें। Gemini से कॉपी करने के 2 तरीके हैं:
+    <br>1) उत्तर के नीचे कॉपी आइकन (📋) पर क्लिक करें।
+    <br>2) प्रतिक्रिया के ऊपर-दाईं ओर तीन डॉट्स (...) पर क्लिक करें और 'कॉपी करें' चुनें)</i></p>
+
+    <h3>Step 6: Return to Examyatri</h3>
+    <p>You have two choices:
+    <br>1) Simply switch tabs from Gemini back to examyatri.
+    <br>2) On mobile, you can press your phone's 'Back' navigation button twice. The quiz will be created automatically!<br>
+    <i>(चरण 6: Examyatri पर लौटें - आपके पास दो विकल्प हैं:
+    <br>1) बस Gemini से वापस examyatri टैब पर जाएं।
+    <br>2) मोबाइल पर, अपने फोन का 'Back' बटन दो बार दबाएं। क्विज़ अपने आप बन जाएगा!)</i></p>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="closeHelpModal()" style="
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+      ">Got it!</button>
+    </div>
+  </div>
+</div>
+
+<!-- Script to control modal -->
+<script>
+  function openHelpModal() {
+    document.getElementById('helpModal').style.display = 'block';
+  }
+
+  function closeHelpModal() {
+    document.getElementById('helpModal').style.display = 'none';
+  }
+</script>
 
 </body>
 </html>
