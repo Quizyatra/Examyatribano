@@ -1006,38 +1006,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     const CONGRATS_PHRASES = [
-        // Bhojpuri
-        "Arey baa, tu ta kamaal kar da!", "Ee ka kar da bhaiya, tor ta jadu ba!", "Jeet ke aais, ab mithai khaais!", "Maja aa gail! Tu ta chha gailu!",
-        "Chhathi maiya ke ashirwaad baa re tu!", "Abey, hero nikli tu ta!", "Tu ta game jeet lele, hum ta dekhat rahe!", "Ka bat, life me century maar dehalu!",
-        "Je kaam tu kaila, opar ta taali baje ke chaahi!", "Ee jeet par ta DJ bajaa di!", "Kahe na, tu ta asli 'Baahubali' nikli!", "Bhaiya, tor chakkar me sab fail ho jaayi!",
-        "Ek number ke vijeta baa tu!", "Tu ta life ke 'Superhit Bhojpuri Cinema' ba!", "Log ka bole — ‘kon hero?’ — hum kahani, ‘Ee dekha!’", "Arrey raja, tor kaam dekh ke to netwa bhi silent ho gail!",
-        "Tor jeet dekh ke RCB fans khush ho gail!", "Zindagi ke IPL jeet lele baa!", "Sixer pe sixer — lagatar jeet!", "Maa kasam, ka zabardast shot maara re!",
-        "Are baba, tor naam abhi trending me baa!", "Tu ta viral nikli — bina filter ke!", "Je jeet tu kaila, uske ‘like’ milat rehe!", "Trophy nai, ekdam thaali me le ja!",
-        "Bina ‘reel’ banaye hi superstar ho gailu!", "Arey dekh bhaiya, jeet par camera bhi focus kar gail!", "Jeet ke itna glow karat baa, lagta makeup free me milal baa!",
-        "Tor success ke dekhi ke log kahat ba — ‘yehi chahiye!’", "Abey, tu ta award function ke permanent guest ban jaibu!", "Sab dekhat rahe, tu bajat rahe — danka!", "Tor jeet par ta lassi pila di!",
-        "Kha lo rasgulla, jeet ke baat baa!", "Tandoori jeet ho, biryani type success baa!", "Zindagi ke khichdi ke tadka tu lagailu!", "Chai jaisan garam jeet baa tor!",
-        "Success aisan ba — golgappa me daal baat!", "Tor hard work — ekdam pakka halwa ho gail!", "Khaana nai, achievement serve kaila re tu!", "Jeet jaisan swaad kachori me nai milat!",
-        "Tu ta samosa ke stuffing nikli — sabke favorite!", "Top ke result — seedha chhati pe baat!", "Jeet par ta selfie le le — aur caption likh ‘ka baat baa!’", "Tor jeet ke dekh ke log kahat — ‘ab hum ka kari?’",
-        "Tu jiti, duniya sochi — ‘hum kidhar gaye?’", "Tani ruk ja — medal laawat ba!", "Champu log ke ta tension ho gail!", "Tu ta result me A+ se upar nikli re!",
-        "Log kahat — ‘yeh banda setting me nai, sahi me smart baa!’", "Masterji bole — ‘aise student par garv baa!’", "Jeet ke baad attitude natural ho jala!",
         // English
-        "You did it, legend!", "Big win energy!", "Somebody call the award committee!", "You nailed it (without a hammer).", "That’s how it’s done!", "Cheers to not failing!",
-        "You’re officially awesome.", "Flex mode: ON.", "You deserve cake. Lots of it.", "That’s a Dhoni finissh", "Orange Cap moment!", "Life gave you a pitch—you hit a six!",
-        "Clean sweep victory!", "RCB finally won... oh wait, it’s YOU!", "Full toss win!", "Game-changer move!", "Captain Cool strikes again!", "Super Over level success",
-        "Oscar-worthy moment!", "Bollywood clap scene incoming!", "Clap like Karan Johar!", "Time for the item number!", "Even SRK would salute that!", "Hero ka entry hua boss!",
-        "Brain = 1000 IQ", "You’ve been promoted to Genius!", "Nerd mode: Overpowered", "Houston, we have a winner!", "You just launched into greatness!", "No bugs, just success!",
-        "Debugged your life!", "Achievement Unlocked!", "CTRL + ALT + WIN", "Deployed like a pro!", "You cooked that win!", "Sizzled to perfection!", "Too spicy to handle!",
-        "That’s Michelin star stuff!", "Chef's kiss moment!", "Served on a silver platter!", "You’re the main course now!", "Tandoori-level hot win!", "Deliciously done!", "From snack to full thali success!",
+        "You did it, legend!", "congratulation", "Flex mode: ON.","That’s a Dhoni", "Full toss win!", "Game-changer move!", "Captain Cool strikes again!", "Brain = 1000 IQ", "Achievement Unlocked!",
         // Hinglish
-        "Bhai, kamaal kar diya!", "Zindagi ki century maar di!", "Aaj toh party banti hai!", "Tu toh asli hero nikla!", "Maa kasam, dil jeet liya!", "Jeet gaya bhai, jeet gaya!",
-        "Tu toh bindaas nikla yaar!", "Full jhakaas performance!", "Dil garden-garden ho gaya!", "Aaj toh nazar lag jayegi!", "Kohli bhi sharma jaaye!", "Dhoni wali calmness aur finish!",
-        "Full toss pe six maara!", "RCB jeeti ya nahi, tu jeet gaya!", "Match winner moment!", "Bouncer bhi chhoti lag rahi thi tujhe!", "Life ka Super Over jeet gaya!",
-        "Trophy ready hai, le jao!", "Bharpur batting, zero drama!", "Tu toh asli Captain Cool hai!", "Film start ho chuki hai—starring YOU!", "Total paisa vasool moment!",
-        "Bollywood ka asli hero!", "Is scene ke liye claps bajenge!", "Karan Johar bhi emotional ho gaya!", "Tu toh SRK se kam nahi!", "Drama-free success!", "Life ki blockbuster opening!",
-        "Movie khatam, applause shuru!", "Climax perfect tha bhai!", "Dimag se genius, style se swag!", "Engineer level win!", "Code compile ho gaya zindagi ka!", "Zero bugs, full speed!",
-        "Achievement unlocked beta!", "Tech se toh Elon Musk bhi dare!", "Rocket science jaisa simple laga tujhe!", "Mission successful, boss!", "Startup wali energy hai!", "Life ka app update ho gaya!",
-        "Zindagi ka biryani ban gaya!", "Halwai bhi teri mehnat pe fida!", "Success pak gayi, kadak!", "Tandoor se seedha trophy tak!", "Butter naan level smooth jeet!",
-        "Aaj toh mithai double ho gayi!", "Chef bhi bole: 'Wah bhai wah!'", "Masala bhi teri jeet ke saamne fail!", "Pakka winner dish ban gaya tu!", "Zindagi ki perfect recipe!"
+        "Bhai, kamaal kar diya", "Aaj toh party banti hai!", "Tu toh asli hero nikla!", "Maa kasam, dil jeet liya!", "Full jhakaas performance!", "Dil garden-garden ho gaya!", "Aaj toh nazar lag jayegi!", "Kohli bhi sharma jaaye!", "Dhoni wali calmness aur finish!",
+        "Match winner moment!", "Trophy ready hai, le jao!", "Achievement unlocked beta!", "Mission successful, boss!"
     ];
 
     const LEGACY_FORMAT_TEXT = `Generate the quiz in plain text format only. Each question must be numbered and must include one of the following headers on the same line (e.g., "1. Multiple Choice Questions").
@@ -2999,6 +2972,38 @@ Create your own quiz now:`;
     document.getElementById('helpModal').style.display = 'none';
   }
 </script>
+3002 | </script>
+3003 | <!-- Add this in your HTML body -->
+      <div class="disclaimer">
+        ⚠️ If website not respond on clicking then delete browsing data and reopen the website.
+      </div>
 
+      <style>
+        .disclaimer {
+          position: fixed;
+          top: 10px;
+          right: -100%;
+          white-space: nowrap;
+          background-color: yellow;
+          color: red;
+          font-weight: bold;
+          padding: 5px 10px;
+          border: 1px solid red;
+          z-index: 9999;
+          animation: moveLeft 15s linear infinite;
+          font-size: 14px;
+        }
+
+        @keyframes moveLeft {
+          from {
+            right: -100%;
+          }
+          to {
+            right: 100%;
+          }
+        }
+      </style>
+3004 | </body>
+3005 | </html>
 </body>
 </html>
