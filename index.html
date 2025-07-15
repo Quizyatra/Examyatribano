@@ -2972,9 +2972,9 @@ Create your own quiz now:`;
     document.getElementById('helpModal').style.display = 'none';
   }
 </script>
-3002 | </script>
-3003 | <!-- Add this in your HTML body -->
-      <div class="disclaimer">
+  <!-- Add this in your HTML body -->
+      <div id="disclaimer"
+        class="disclaimer">
         ⚠️ If website not respond on clicking then delete browsing data of browser (Chrome) and reopen the website.
       </div>
 
@@ -3003,7 +3003,17 @@ Create your own quiz now:`;
           }
         }
       </style>
-
+  <!-- ② new tiny script: hide after 15 000 ms -->
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            const banner = document.getElementById('disclaimer');
+            if (banner) banner.style.display = 'none';
+          }, 15000); // 15 seconds
+        });
+      </script>
+</body>
+</html>
 
 
 </body>
